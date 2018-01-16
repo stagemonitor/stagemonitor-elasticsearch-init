@@ -1,0 +1,33 @@
+group 'org.stagemonitor'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+run {
+    mainClassName = "org.stagemonitor.init.InitElasticsearch"
+    if (project.hasProperty("url")) {
+        args += url
+    }
+}
+
+dependencies {
+    compile "org.slf4j:slf4j-simple:1.7.25"
+    compile 'javax.servlet:javax.servlet-api:3.0.1'
+    compile 'net.sf.ehcache:ehcache-core:2.5.1'
+
+    compile "org.stagemonitor:stagemonitor-web-servlet:$stagemonitorVersion"
+    compile "org.stagemonitor:stagemonitor-tracing-elasticsearch:$stagemonitorVersion"
+
+    // optional plug-ins
+    // compile "org.stagemonitor:stagemonitor-os:$stagemonitorVersion"
+    // compile "org.stagemonitor:stagemonitor-alerting:$stagemonitorVersion"
+    // compile "org.stagemonitor:stagemonitor-ehcache:$stagemonitorVersion"
+}
