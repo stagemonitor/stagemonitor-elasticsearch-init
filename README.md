@@ -19,7 +19,7 @@ cd stagemonitor-elasticsearch-init
 ### 2. Adjust stagemonitor version
 
 Open `gradle.properties` and set the property `stagemonitorVersion` to the version of stagemonitor you are actually using.
-Note that the minimum Version is 0.87.0.
+Note that the minimum Version is 0.87.1.
 
 ### 3. Adjust optional plug-ins
 
@@ -52,7 +52,9 @@ firewall rules.
 
 A: Build the distribution on a host with unrestricted access to the internet: Execute `./gradlew assembleDist`.
 In the directory `build/distributions` you will find a `zip` and `tar` file which contain all dependencies.
-Extract either the `zip` or `tar` file on the target host and execute `bin/stagemonitor-elasticsearch-init` (Unix) or `bin/stagemonitor-elasticsearch-init.bat` (Windows)
+Extract either the `zip` or `tar` file on the target host and execute
+`bin/stagemonitor-elasticsearch-init http://user:pwd@localhost:9200` (Unix) or
+`bin/stagemonitor-elasticsearch-init.bat http://user:pwd@localhost:9200` (Windows)
 
 Q: I don't want to specify the Elasticsearch url as a command line argument as it would leak the credentials in the console history
 
