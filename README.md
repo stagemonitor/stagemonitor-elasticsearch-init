@@ -19,7 +19,8 @@ cd stagemonitor-elasticsearch-init
 ### 2. Adjust stagemonitor version
 
 Open `gradle.properties` and set the property `stagemonitorVersion` to the version of stagemonitor you are actually using.
-Note that the minimum Version is 0.87.1.
+
+Note that the minimum Version is 0.87.2.
 
 ### 3. Adjust optional plug-ins
 
