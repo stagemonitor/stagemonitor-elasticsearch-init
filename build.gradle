@@ -30,3 +30,8 @@ dependencies {
     // compile "org.stagemonitor:stagemonitor-alerting:$stagemonitorVersion"
     // compile "org.stagemonitor:stagemonitor-ehcache:$stagemonitorVersion"
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.10.2"
+    distributionType = "all"
+}
